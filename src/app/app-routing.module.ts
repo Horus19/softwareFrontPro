@@ -16,6 +16,7 @@ const routes: Routes = [
     path: '404',
     component: ErrorPageComponent
   },
+  { path: 'general', loadChildren: () => import('./general/general.module').then(m => m.GeneralModule) },
   {
     path: '**',
     redirectTo: 'home'
