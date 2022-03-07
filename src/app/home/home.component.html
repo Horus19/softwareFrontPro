@@ -1,8 +1,37 @@
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
+<div class="card border-primary mb-3">
+    <div class="card-header">Municipios</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de Municipios</h5>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/Municipios/form']">
+          Crear Municipio
+        </button>
+      </div>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>
+              editar
+            </th>
+            <th>eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Municipio of municipios">
+            <td>{{ Municipio.id }}</td>
+            <td>{{ Municipio.nombre }}</td>
+            <td>
+              <button type="button" name="editar" [routerLink]="['/Municipios/form', Municipio.id]" class="btn btn-primary btn-sm">editar</button>
+            </td>
+            <td>
+              <button type="button" name="eliminar" (click)='delete(Municipio)' class="btn btn-danger btn-sm">eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
+  

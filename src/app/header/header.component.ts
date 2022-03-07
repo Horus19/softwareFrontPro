@@ -17,11 +17,8 @@ import { Subscription } from "rxjs";
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   constructor() {}
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
   logout(){
     console.log('esto cierra');
   }
