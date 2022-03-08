@@ -5,6 +5,12 @@ import Swal from 'sweetalert2';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Usuario } from './usuario';
 import { AuthService } from './auth.service';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
+import { end } from '@popperjs/core';
 
 declare const gapi:any;
 
@@ -28,7 +34,8 @@ export class LoginComponent implements OnInit {
   constructor( private router: Router,
                private fb: FormBuilder,
                private authService: AuthService,
-               private ngZone: NgZone ) { 
+               private ngZone: NgZone,
+               private _snackBar: MatSnackBar ) { 
                 this.usuario = new Usuario();
                }
 
@@ -48,18 +55,25 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.login(this.usuario).subscribe(response => {
-      console.log(response);
+      //console.log(response);
 
       this.authService.guardarUsuario(response.access_token);
       this.authService.guardarToken(response.access_token);
       let usuario = this.authService.usuario;
-      this.router.navigate(['/clientes']);
-      console.log('inicio con exito');
+      // TODO: definir ruta luego del login
+      this.router.navigate(['/home']);
+      //console.log('inicio con exito');
       //swal('Login', `Hola ${usuario.username}, has iniciado sesión con éxito!`, 'success');
     }, err => {
       if (err.status == 400) {
-        console.log('credenciales incorrectas');
-        //swal('Error Login', 'Usuario o clave incorrectas!', 'error');
+       // console.log('credenciales incorrectas');
+        // this._snackBar.open('Usuario o clave incorrectas!!', 'OK', {
+        //   duration: 4 * 1000,
+        //   horizontalPosition: end,
+        //   // verticalPosition: top
+
+        // });
+        Swal.fire('Error Login', 'Usuario o clave incorrectas!', 'error');
       }
     }
     );
