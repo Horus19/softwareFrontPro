@@ -1,3 +1,40 @@
-<mat-card>
-    Hola mundo
-</mat-card>
+<section id="wrapper" class="login-register login-sidebar" style="background-image:url(../../../../assets/images/background/login-register2.jpg);">
+    <div class="login-box card">
+        <div class="login-form">
+            <div class="login-head">
+                <img src="../../../../assets/images/user.png" alt="">
+            </div>
+            <div class="card-body">
+                <form class="form-horizontal form-material" 
+                        autocomplete="off"
+                        [formGroup]="loginForm"
+                        id="loginform">
+                    <div class="col-form">
+                        <div class="form-group">
+                            <!-- <div class="col-xs-12"> -->
+                                <input class="form-control" 
+                                        type="text" 
+                                        placeholder="Usuario"
+                                        formControlName="Usuario">
+                            <!-- </div> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <div class="col-xs-12"> -->
+                                <input class="form-control" 
+                                        type="password"
+                                        placeholder="Password"
+                                        formControlName="password">
+                            <!-- </div> -->
+                        </div>
+                        <div class="col-xs-12 login-btn">
+                            <button class="btn btn-secondary btn-lg btn-block text-uppercase btn-rounded" type="submit">Ingresar</button>
+                        </div>
+                        <div class="col-sm-12 text-center">
+                            No tienes una cuenta? <a routerLink="/register" class="text-primary m-l-5"><b>Registrarse</b></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,89 @@
+/* .body {
+  background-image:url("../../../../assets/background/login-register.jpg");
+} */
+.login-register {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    padding: 10% 0;
+    position: fixed; }
+  
+  .login-box {
+    width: 420px;
+    margin: 0 auto; }
+    .login-box .footer {
+      width: 100%;
+      left: 0px;
+      right: 0px; }
+    .login-box .social {
+      display: block;
+      margin-bottom: 30px; }
+  
+  #recoverform {
+    display: none; }
+  
+  .login-sidebar {
+    padding: 0px;
+    margin-top: 0px; }
+    .login-sidebar .login-box {
+      right: 0px;
+      position: absolute;
+      height: 100%; }
+
+      .fast{
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both
+}
+
+#themecolors .selector, .cursor {
+    cursor: pointer;
+}
+
+
+#google-btn {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login-head {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+  width: 70%;
+
+}
+.col-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;;
+}
+.login-form {
+  margin-top: 25%;
+}
+
+.login-btn{
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-body {
+  padding: 1rem 0rem;
+}
