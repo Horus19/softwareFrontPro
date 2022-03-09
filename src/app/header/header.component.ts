@@ -20,25 +20,30 @@ import { AuthService } from "../auth/pages/login/auth.service";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit{
+  logueado: Boolean = false;
   constructor(
     private router: Router,
     private authService: AuthService
     ) {}
   ngOnInit(): void {
     if(this.authService.isAuthenticated()){
-      console.log('logueado');
+      this.logueado = true;
     }
     
   }
   logout(){
-    console.log('esto cierra');
+    this.authService.logout();
+    this.router.navigate(['/auth/login']);
   }
   toggleFullscreen(){
     console.log('esto screen full');
   }
 
+  goToHome(){
+    this.router.navigate(['/home']);
+  }
+
   login(){
-    console.log('ss');
     this.router.navigate(['/auth/login']);
   }
 }
