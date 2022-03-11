@@ -17,6 +17,8 @@ const routes: Routes = [
     component: ErrorPageComponent
   },
   { path: 'general', loadChildren: () => import('./general/general.module').then(m => m.GeneralModule) },
+  { path: 'publicaciones', loadChildren: () => import('./publicaciones/publicaciones.module').then(m => m.PublicacionesModule) },
+  { path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(m => m.HeroesModule) },
   {
     path: '**',
     redirectTo: 'home'

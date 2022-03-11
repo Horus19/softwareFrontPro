@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
       this.authService.guardarToken(response.access_token);
       let usuario = this.authService.usuario;
       // TODO: definir ruta luego del login
-      this.router.navigate(['/home']);
+      this.router.navigate(['/general']);
       //console.log('inicio con exito');
       //swal('Login', `Hola ${usuario.username}, has iniciado sesión con éxito!`, 'success');
     }, err => {

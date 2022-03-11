@@ -13,6 +13,10 @@ export class PublicacionService {
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
   constructor(private http: HttpClient) {}
+
+  getPublicaciones():  Observable<Publicacion[]> {
+    return this.http.get<Publicacion[]>(`${environment.urlBack}publicaciones`);
+  }
   
   getPublicacionesPorUsuario(id: number): Observable<Publicacion[]> {
     return this.http.get<Publicacion[]>(`${environment.urlBack}publicacionesByUser/${id}`);
@@ -66,7 +70,7 @@ export class PublicacionService {
         "id_user" : 1,
         "id_municipio" : municipio,
         "imagenList":[{
-            "url":"www.photo.com"
+            "url":"https://cdn.baquianos.com/img/blog/2019/13/san-gil-i6yx640.jpg"
         }]
       }
     

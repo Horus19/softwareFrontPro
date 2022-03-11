@@ -1,0 +1,38 @@
+<!-- <h1>Listado de publicacion</h1>
+<mat-divider></mat-divider>
+<br> -->
+
+<!-- <div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px">
+
+    <div 
+         *ngFor="let publicacion of publicaciones">
+       
+        <app-publicacion-tarjeta [publicacion]="publicacion"></app-publicacion-tarjeta>
+
+    </div>
+</div> -->
+<div fxLayout='row wrap' fxLayoutWrap class="cards">
+
+    <div fxFlex="20" class="example-card">
+    <mat-card *ngFor="let publicacion of publicaciones" style="margin-top:10px;">
+      <mat-card-header>
+        <mat-card-title>{{ publicacion.titulo }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="https://cdn.baquianos.com/img/blog/2019/13/san-gil-i6yx640.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          {{ publicacion.descripcion}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="detalle(publicacion.id)">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+    
+
