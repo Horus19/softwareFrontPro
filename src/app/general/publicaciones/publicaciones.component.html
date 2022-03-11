@@ -1,0 +1,34 @@
+<div class="content">
+    <mat-card>
+        <div class="my-2 text-left">
+            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/general/crear']">
+              Crear publicacion
+            </button>
+          </div>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Titulo</th>
+                <th>
+                  Editar
+                </th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let publicacion of publicaciones">
+                <!-- <td>{{ publicacion.id }}</td> -->
+                <td>{{ publicacion.titulo }}</td>
+                <td>
+                  <button type="button" name="editar"  class="btn btn-primary btn-sm" (click)="editar(publicacion.id)">editar</button>
+                </td>
+                <td>
+                  <button type="button" name="eliminar" (click)='delete(publicacion)' class="btn btn-danger btn-sm">eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </mat-card>
+  </div>
+  
+  
